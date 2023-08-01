@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #29336c, #000);
+}
+
+#mapa-mental {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.central-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9bc60;
+  padding: 20px;
+  border-radius: 50%;
+  color: #fff;
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.central-node button {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f9bc60;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.central-node:hover button {
+  display: block;
+}
+
+.cloud-node {
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: grab;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  user-select: none;
+  opacity: 0.9;
+  transform-origin: center;
+}
+
+.cloud-node:active {
+  cursor: grabbing;
+}
+
+.cloud-node h2 {
+  margin: 0;
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #29336c;
+  margin-bottom: 10px;
+}
+
+.cloud-node p {
+  margin: 0;
+  color: #777;
+}
+
+.cloud-node.concept-node {
+  top: 30%;
+  left: 5%;
+  background-color: #ffcc66;
+}
+
+.cloud-node.elements-node {
+  top: 10%;
+  left: 25%;
+  background-color: #ff6666;
+}
+
+.cloud-node.contribution-node {
+  top: 5%;
+  left: 55%;
+  background-color: #66cc99;
+}
+
+.cloud-node.utility-node {
+  top: 10%;
+  left: 90%;
+  background-color: #6699cc;
+}
+
+.cloud-node.info-node {
+  top: 30%;
+  left: 95%;
+  background-color: #ff99cc;
+}
+
+#line-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.info-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #29336c;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  z-index: 3;
+}
+
+.info {
+  margin-bottom: 15px;
+}
